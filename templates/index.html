@@ -60,4 +60,7 @@
         </div>
       </div>
     </div>
+    {% for users in users %}
+        {{users.task_name}}<br>
+    {% endfor %}
 {% endblock %}
