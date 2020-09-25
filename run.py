@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-    
+
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -22,8 +22,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/index')
 def index():
-    users = mongo.db.users.find()
-    return render_template("index.html", users=users)
+    return render_template("index.html")
 
 @app.route("/about")
 def about():
@@ -50,6 +49,25 @@ def loginform():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # check if username already exists in db
+        print(request.form.get("username"))
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("register.html")
 
 

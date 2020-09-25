@@ -3,15 +3,15 @@
 
     <h3 class="center-align">Register</h3>
 
-<form>
-  <div class="form-group" method="POST" action="{{ url_for('register')}}" >
+<form class="register" method="POST" action="{{ url_for('register')}}">
+  <div>
     <label for="username">Username</label>
-    <input type="username" class="form-control" id="username" aria-describedby="userName" placeholder="Enter username">
+    <input type="username" name="username" class="form-control validate" id="username" aria-describedby="userName" placeholder="Enter username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9] {5,15}$" required>
     <small id="userName" class="form-text text-muted">We'll never share your username with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" name="password" class="form-control validate" id="exampleInputPassword1" placeholder="Password" minlength="5" maxlength="15"  pattern="^[a-zA-Z0-9] {5,15}$" required>
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
