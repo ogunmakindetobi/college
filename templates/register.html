@@ -6,12 +6,12 @@
 <form class="register" method="POST" action="{{ url_for('register')}}">
   <div>
     <label for="username">Username</label>
-    <input type="username" name="username" class="form-control validate" id="username" aria-describedby="userName" placeholder="Enter username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9] {5,15}$" required>
+    <input type="username" name="username" class="form-control validate" id="username" aria-describedby="userName" placeholder="Enter username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
     <small id="userName" class="form-text text-muted">We'll never share your username with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control validate" id="exampleInputPassword1" placeholder="Password" minlength="5" maxlength="15"  pattern="^[a-zA-Z0-9] {5,15}$" required>
+    <input type="password" name="password" class="form-control validate" id="exampleInputPassword1" placeholder="Password" minlength="5" maxlength="15"  pattern="^[a-zA-Z0-9]{5,15}$" required>
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -20,4 +20,11 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+<div class="row">
+    <div class="col s12">
+    <p class="center-align">
+    Already Registered? <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+    </p>
+    </div>
+</div>
   {% endblock %}

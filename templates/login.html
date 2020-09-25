@@ -6,7 +6,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" name="loginform" action="loginform" method="post">
+                        <form id="login-form" class="form" name="loginform" action="{{ url_for('login') }}" method="post">
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
@@ -26,5 +26,13 @@
             </div>
         </div>
     </div>
-</body></h2>
+</h2>
+
+<div class="row">
+    <div class="col s12 text-center">
+    <p class="center-align">
+    New Here? <a href="{{ url_for('register') }}" class="light-blue-text text-darken-d">Register Account</a>
+    </p>
+    </div>
+</div>
 {% endblock %}
