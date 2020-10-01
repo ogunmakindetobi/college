@@ -28,7 +28,7 @@ def index():
 def about():
     return render_template("about.html", page_title='About')
 
-@app.route("/contact", methods=["GET","POST"])
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
         flash("Thanks {}, we have received your message!".format(
@@ -42,7 +42,7 @@ def login():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(existing_user["password"], request.form.get("password")):
@@ -83,18 +83,36 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/create_course/add", methods=['GET', 'POST'])
+def create_course():
+    if request.method == "POST":
+        create_course = {
+            "course_name": request.form.get("course_name"),
+            "course_number": request.form.get("course_number"),
+            "course_description": request.form.get("course_description"),
+            "course_mark": request.form.get("course_mark"),
+            "created_by": session["user"]
+        }
+        print(create_course)
+        mongo.db.create_course.insert_one(create_course)
+        flash("Course Successfully Added")
+        return redirect(url_for("index"))
+
+    return render_template("create_course.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        # check if username already exists in db
+    # check if username already exists in db
         print(request.form.get("username"))
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
+
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))

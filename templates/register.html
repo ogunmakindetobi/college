@@ -6,8 +6,8 @@
 <form class="register" method="POST" action="{{ url_for('register')}}">
   <div>
     <label for="username">Username</label>
-    <input type="username" name="username" class="form-control validate" id="username" aria-describedby="userName" placeholder="Enter username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
-    <small id="userName" class="form-text text-muted">We'll never share your username with anyone else.</small>
+    <input type="text" name="username" class="form-control validate" id="username" aria-describedby="userName" placeholder="Enter username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required>
+    <small id="user-name" class="form-text text-muted">We'll never share your username with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
