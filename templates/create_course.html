@@ -3,11 +3,11 @@
 
    <form  class="create_course" method="POST" action="{{ url_for('create_course')}}" id="create_course" name="create_course">
       <!-- Name these the same as the database attributes they correspond to. -->
-        <input type="text" name="course_name">
-        <input type="text" name="course_number">
-        <input type="text" name="course_description">
-        <input type="text" name="course_mark">
-        <input type="submit" value="Create Course">
+       <label for="" class="text-info"> Course Name <input type="text" name="course_name"></label><br>
+        <label for="" class="text-info"> Course Number <input type="text" name="course_number"></label><br>
+        <label for="" class="text-info"> Course Description <input type="text" name="course_description"></label><br>
+        <label for="" class="text-info"> Course Mark <input type="text" name="course_mark"> </label><br>
+        <input class="text-info" type="submit" value="Create Course"><br>
     </form>
     {% endblock %}
 

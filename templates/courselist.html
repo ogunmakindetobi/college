@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for create_course in create_course %}
+    {{ create_course.course_name }}
+    {{ create_course.course_number }}
+    {{ create_course.course_description }}
+    {{ create_course.course_mark }}
+{% endfor %}
+
+{% endblock %}

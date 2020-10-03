@@ -16,13 +16,16 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
+DATABASE = "college"
+COLLECTION = "create_course"
 
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/get_create_course')
 def index():
-    return render_template("index.html")
+    courses = mongo.db.create_course.find()
+    return render_template("index.html", courses=courses)
 
 @app.route("/about")
 def about():
@@ -99,6 +102,13 @@ def create_course():
         return redirect(url_for("index"))
 
     return render_template("create_course.html")
+
+
+@app.route("/courselist", methods=["GET", "POST"])
+def courselist():
+    create_course =  mongo.db.create_course
+    create_course.insert_one(request.form.to_dict())
+    return redirect(url_for('courselist'))
 
 
 @app.route("/register", methods=["GET", "POST"])
