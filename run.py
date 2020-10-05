@@ -24,7 +24,7 @@ COLLECTION = "create_course"
 @app.route('/')
 @app.route('/get_create_course')
 def index():
-    courses = mongo.db.create_course.find()
+    courses = list(mongo.db.create_course.find())
     return render_template("index.html", courses=courses)
 
 @app.route("/about")
@@ -102,13 +102,6 @@ def create_course():
         return redirect(url_for("index"))
 
     return render_template("create_course.html")
-
-
-@app.route("/courselist", methods=["GET", "POST"])
-def courselist():
-    create_course =  mongo.db.create_course
-    create_course.insert_one(request.form.to_dict())
-    return redirect(url_for('courselist'))
 
 
 @app.route("/register", methods=["GET", "POST"])

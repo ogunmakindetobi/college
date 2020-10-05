@@ -61,7 +61,35 @@
         </div>
       </div>
     </div>
-    {% for course in courses %}
+<!--{% for course in courses %}
     {{ course.course_name }}
-{% endfor %}
+    {{ course.course_number }}
+    {{ course.course_description }}
+    {{ course.course_mark }}
+{% endfor %} -->
+
+
+    <div class="accordion" id="accordionExample">
+    {% for course in courses %}
+    <div class="card">
+        <div class="card-header" id="heading{{ loop.index }}">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ loop.index }}">
+               <strong>Course list: {{ course.course_name }}</strong>
+                </button>
+        </h2>
+        </div>
+        <div id="collapse{{ loop.index }}" class="collapse show" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionExample">
+            <div class="card-body">
+           <strong> <ul>  <li> Course Number: {{ course.course_number }}</li><br>
+            <li>Course Description: {{ course.course_description }}</li><br>
+            <li>Course Mark: {{ course.course_mark }}</li><br>
+            </ul>
+            </strong> 
+
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
 {% endblock %}
