@@ -17,15 +17,23 @@ app.secret_key = os.environ.get('SECRET_KEY')
 
 mongo = PyMongo(app)
 DATABASE = "college"
-COLLECTION = "create_course"
+COLLECTION = "courses"
 
 
 
 @app.route('/')
-@app.route('/get_create_course')
+@app.route('/get_courses')
 def index():
-    courses = list(mongo.db.create_course.find())
+    courses = list(mongo.db.courses.find())
     return render_template("index.html", courses=courses)
+
+@app.route("/delete_course/<course_id>")
+def delete_course(course_id):
+    print(course_id)
+    mongo.db.courses.delete_one({"_id": ObjectId(course_id)})
+    print(mongo.db.courses.find_one({"_id": ObjectId(course_id)}))
+    flash("Course successfully deleted")
+    return redirect(url_for("index"))
 
 @app.route("/about")
 def about():
@@ -89,15 +97,15 @@ def logout():
 @app.route("/create_course/add", methods=['GET', 'POST'])
 def create_course():
     if request.method == "POST":
-        create_course = {
+        courses = {
             "course_name": request.form.get("course_name"),
             "course_number": request.form.get("course_number"),
             "course_description": request.form.get("course_description"),
             "course_mark": request.form.get("course_mark"),
             "created_by": session["user"]
         }
-        print(create_course)
-        mongo.db.create_course.insert_one(create_course)
+        print(courses)
+        mongo.db.courses.insert_one(courses)
         flash("Course Successfully Added")
         return redirect(url_for("index"))
 
