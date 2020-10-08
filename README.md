@@ -2,7 +2,7 @@
 
 This is a website for college student and the lecture.
 
-<img src="https://res.cloudinary.com/machikolacey/image/upload/v1601223705/milestone3/MS3_emwjc6.png" style="width:100%;"/>
+<img src="page.png" style="width:100%;"/>
 
 The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
 mark of the course and the number of the course,this website is useful for the users cause its has good ussfulness for student that are on holidays and lecturer that want to involve student on new course for the new Semester.its also help each college lecturers to register,login and have to create this courses thats student new to focus on.
@@ -21,12 +21,8 @@ mark of the course and the number of the course,this website is useful for the u
 
 
 ## Deployed page is available here
-http://milestone3-data-centric-mlk.herokuapp.com/
+https://flask-college.herokuapp.com/
 
-
-## Wireframe
-
-https://github.com/machikolacey/milestone3/blob/master/pdf/wireframe-ny-cafe-memories.pdf
 
 
 ## UX
@@ -35,7 +31,7 @@ If they havent visted this website before the home page appear first,which shows
 
 The steps:
  
- If register:
+ # If register:
 
 <ol>
 <li>The user can add username and password to register their account</li>
@@ -43,19 +39,20 @@ The steps:
 </ol>
 
 
- If login:
+ # If login:
 
 <ol>
 <li>An user can fill in the form to go to "Login"</li>
 <li>It will navigate the user to "profile" page</li>
 <li>click on course page to create a course for other non Registered users</li>
-<li>On the couser page , they can add the course  name, description, number and ,mark that each course takes.</li>
+<li>On the course page , they can add the course  name, description, number and ,mark that each course takes.</li>
 <li>When this is create its loops back to home page with message course created sucessfully</li>
 <li>The user can see their memory is added on the page</li>
 <li>The user can  delete the memory by clicking on the buttons</li>
 </ol>
 
-
+# Course page
+* Form to create course.
 
 ## Features
 
@@ -63,7 +60,7 @@ The steps:
 ### Existing Features
 
 <ul>
-<li><b>Feature 1 : Browsing all memories</b> - allows users browsing all the posted memories, by visiting home "Everyone's memories" page</li>
+<li><b>Feature 1 : Browsing all course created</b> - allows users browsing all the posted course , by visiting home  page</li>
 <li><b>Feature 2 : Course information</b> - allows users reading collage and course  information  </li>
 <li><b>Feature 3 : Add  memories</b> - allows users adding  their course  memory by filling 'course' form</li>
 <li><b>Feature 4 : Contact form</b> - Its allow users to contact collage this is print out on the terminal gitpod and its not pass in database</li>
@@ -72,9 +69,7 @@ The steps:
 
 ### Features Left to Implement
 - I would like to categorise course
-- I would like to add more user information and user role - so cafe owner has more privilage to add their cafe information and also coupon code
-- I would like to add coupon provided by cafe owners. This will potentially we can provide a package for cafe owners to have their subscriptions, give them ability to add campaigns targeting cafe freaks. 
-- I would like to add a facility to give users more coupon code, when they contribute to this website by adding more memories. Hopefully we can provide subscriptions packages for them so they can benefit from sharing their memories.
+- I would like to add more user information and user role.
 
 
 
@@ -146,19 +141,11 @@ Also, this was run through these validators.
 ### Test Results
 
 <ol>
-<li>Responsive menu was too tall and hiding the content on tablet size - fixed</li>
-<li>The modal popup - the content was overflowing - fixed</li>
-<li>The overlay was hiding the mobile nav - fixed</li>
-<li>Auto Complete was not working on area search. Found the order of the javascript file was wrong - fixed</li>
-<li>The content of the memory card was overflowing depends on the description - fixed</li>
-<li>On the mobile phone menu there was no lines between links, and no effects on hover - fixed</li>
-<li>On registration process it wasn't displaying requirement for the username - fixed</li>
-<li>The 'Go back' button was on the front page - fixed</li>
-<li>On tablet size, the memory image was not 100% width - fixed</li>
-<li>On tablet size, the the header displayed 2 lines and took too much space - fixed</li>
-<li>When user photo was not presented, it was causing an error on memory submittion - fixed</li>
-<li>'background-color:none' was not validated - used 'background-color:transparent' instead</li>
-<li>'border-color:none' was not validated - used border:none instead</li>
+<li>Mobile view on home page is wild and its was fix </li>
+<li>The course list was close to the home page wirttings its was fixed by adding p tag </li>
+<li>The database doesnt received form list before its was fix by chnaging from create_course to courses - fixed</li>
+<li>The 'Delete' button was too big counldnt  - fixed</li>
+<li>Course form was not listed on mobile view and i add the list tag and  - fixed</li>
 </ol>
 
 
@@ -167,25 +154,18 @@ Also, this was run through these validators.
 <h3>How to test this project</h3>
 
 <ol>
-<li>On the front page, a welcomo popup will be shown with buttons - press 'Get Started!' button to go to register page</li>
+<li>On the home page you have the details news about the college which the course that are created</li>
 <li>Fill in the form with a username and password, press 'Register' button</li>
-<li>It will redirect to "Your Account Information" page</li>
-<li>Click on 'Edit' button to display 'Edit your account information' page</li>
-<li>Click on 'Save' to go to "Your memories" page</li>
-<li>Click on 'Click here' to go to 'Add Your Cafe Memory' page </li>
+<li>It will redirect to "Your Profile Information" page</li>
+<li>Click on  and fill in form to  'Add Your course' page </li>
 <li>Fill in the form - add 2 or more characters on 'cafe' field to see auto-complete is working</li>
-<li>Click on 'Date' field to see datepicker is working</li>
-<li>Submit the form to go to 'Your cafe memories' page</li>
-<li>On the top menu, click on 'Home' to go back to 'Everyone's memories' page</li>
-<li>Check pagenation is working by clicking on the page numbers</li>
-<li>Check 'Sort by' section to see sort is working</li>
-<li>Click on 'Your memories' button to see if you can go back to 'Your memories' page</li>
-<li>Click on 'Everyone's memories' button to see if you can go back to 'Everyone's memories' page</li>
-<li>On the top menu, click on 'Add cafe' to go to 'Add Cafe' page</li>
-<li>Fill in the form - test if area auto complete is working</li>
-<li>Click on 'Submit' button to go to 'Manage Cafes' to see if the cafe is added on the page</li>
-<li>Choose one of the cafes, click on 'Edit' button to edit cafe</li>
-<li>Choose one of the cafes, click on 'Delete' button to delete cafe</li>
+<li>create course  form to go to 'home page ' page</li>
+<li> Its will create course and redirect you back to home page</li>
+<li>fill in contact forms its print out on terminal</li>
+<li>Login form is working perfectly and you cant login without register </li>
+<li>register page is working by using new username and password to register</li>
+<li> Add course in course page its appear on home page through database</li>
+<li>Choose one of the course , click on 'Delete' button to delete cafe</li>
 <li>Click on 'Logout' button to logout</li>
 </ol>
 
@@ -197,7 +177,7 @@ This is pushed and deployed on to heroku.
 
 Deployed project is found here:
 
-https://milestone3-data-centric-mlk.herokuapp.com/
+https://flask-college.herokuapp.com/
 
 
 This project utilises Mongo DB to use NO-SQL (non-relational) database.
@@ -207,10 +187,9 @@ Before cloning the project:
 <li>Add a database collection 'brightonCafes' on <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a></li>
 <li>Create a database and these tables: 
    <ul>
-   <li>cafes</li>
-   <li>areas</li>
+   <li>college</li>
+   <li>courses</li>
    <li>users</li>
-   <li>memories</li>
    </ul>
 </li>
 </ol>
@@ -305,7 +284,6 @@ git push heroku master
 ### Content
 
 <ul>
-<li>Memory photos are taken by Machiko Lacey-Kimura, and uploaded to <a href="https://cloudinary.com/" rel="nofollow">https://cloudinary.com/</a></li>
 <li>This project is using icons from Materialize.</li>
 </ul>
 
@@ -314,13 +292,12 @@ git push heroku master
 <ul>
 <li>- The photos and texts used in this website are taken from:
 <ul>
-<li>https://www.google.co.uk/maps</li>
-<li>https://www.facebook.com</li>
-</ul>
-/li>
+<li>https://www.google.com</li>
 
-<li>- The videos used in this website are taken from:
-https://www.youtube.com/</li>
+</ul>
+</li>
+
+
 
 </ul>
 
@@ -328,3 +305,4 @@ https://www.youtube.com/</li>
 ### Acknowledgements
 
 - I received inspiration for this project from a resume project provided by Code Institute.
+- My new mentor brain
