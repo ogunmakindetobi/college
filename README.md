@@ -1,10 +1,9 @@
 ## Alicia College
 
 This is a website for college student and the lecture.
+![alt text](https://github.com/ogunmakindetobi/college/raw/master/src/common/images/page.png "Logo Title Text 1")
 
-<img src="url('{{ url_for('static', filename='img/page.png') }}')" style="width:100%;"/>
-
-The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
+* The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
 mark of the course and the number of the course,this website is useful for the users cause its has good ussfulness for student that are on holidays and lecturer that want to involve student on new course for the new Semester.its also help each college lecturers to register,login and have to create this courses thats student new to focus on.
 
 
