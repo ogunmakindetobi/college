@@ -157,7 +157,7 @@ Also, this was run through these validators.
 <li>Fill in the form with a username and password, press 'Register' button</li>
 <li>It will redirect to "Your Profile Information" page</li>
 <li>Click on  and fill in form to  'Add Your course' page </li>
-<li>Fill in the form - add 2 or more characters on 'cafe' field to see auto-complete is working</li>
+<li>Fill in the form - add 2 or more characters on 'Course' field to see auto-complete is working</li>
 <li>create course  form to go to 'home page ' page</li>
 <li> Its will create course and redirect you back to home page</li>
 <li>fill in contact forms its print out on terminal</li>
