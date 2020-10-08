@@ -183,7 +183,7 @@ This project utilises Mongo DB to use NO-SQL (non-relational) database.
 Before cloning the project:
 
 <ol>
-<li>Add a database collection 'brightonCafes' on <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a></li>
+<li>Add a database collection 'college' on <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a></li>
 <li>Create a database and these tables: 
    <ul>
    <li>college</li>
