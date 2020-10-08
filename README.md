@@ -2,7 +2,7 @@
 
 This is a website for college student and the lecture.
 
-![alt text](https://c421c423-7f1c-44bc-abac-bd1b7305e089.ws-eu01.gitpod.io/files/download/?id=71ba57fe-844f-4a33-b527-7ef911c3ef96)
+<img src="url('{{ url_for('static', filename='img/page.png') }}')" style="width:100%;"/>
 
 The goal for the user is for educational purpose,which is use by the college lecturers to create new  course for the Semester,this website also allow student to view the course created by the each lecturers for them to have the description about the new course,
 mark of the course and the number of the course,this website is useful for the users cause its has good ussfulness for student that are on holidays and lecturer that want to involve student on new course for the new Semester.its also help each college lecturers to register,login and have to create this courses thats student new to focus on.
