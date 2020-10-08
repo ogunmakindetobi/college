@@ -283,7 +283,7 @@ git push heroku master
 ### Content
 
 <ul>
-<li>This project is using icons from Materialize.</li>
+<li>This project is using icons from Bootstrap</li>
 </ul>
 
 ### Media
